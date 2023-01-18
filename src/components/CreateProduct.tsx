@@ -3,8 +3,7 @@ import { IProduct } from '../models'
 import axios from "axios";
 import { ErrorMessage } from "./ErrorMessage";
 
-
-
+// data
 const productData = {
      title: '',
      price: 13.5,
@@ -17,7 +16,15 @@ const productData = {
      }
 }
 
-export function CreateProduct() {
+// interface
+
+interface CreateProductProps {
+     onCreate: () => void
+}
+
+
+
+export function CreateProduct({ onCreate }: CreateProductProps) {
 
      const [value, setValue] = useState('')
      const [error, setError] = useState('')
@@ -32,9 +39,11 @@ export function CreateProduct() {
           }
           productData.title = value
           const response = await axios.post<IProduct>('https://fakestoreapi.com/products', productData)
+
+          onCreate()
      }
 
-     const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
           setValue(event.target.value)
      }
 
