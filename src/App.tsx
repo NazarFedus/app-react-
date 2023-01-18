@@ -11,7 +11,7 @@ import { IProduct } from './models';
 
 function App() {
   const {products, loading, error, addProduct} = useProducts()
-  const [modal, setModal] = useState(true)
+  const [modal, setModal] = useState(false)
 
   const createHandler = (product: IProduct) => {
     setModal(false)
@@ -24,7 +24,7 @@ function App() {
       { error && <ErrorMessage error = {error}></ErrorMessage> }
       { products.map(product => <Product product = {product} key={product.id}></Product>) }
 
-    {modal && <Modal title='Create new product'>
+    {modal && <Modal title='Create new product' onClose={() => setModal(false)}>
       <CreateProduct onCreate={createHandler} ></CreateProduct>
     </Modal>}
 
