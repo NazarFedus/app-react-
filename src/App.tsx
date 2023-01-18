@@ -28,6 +28,9 @@ function App() {
       <CreateProduct onCreate={createHandler} ></CreateProduct>
     </Modal>}
 
+    <button className='fixed bottom-5 right-5 rounded-full bg-green-700 text-white text-2xl px-5 py-3'
+    onClick={()=>setModal(true)}
+    >+</button>
     </div>
   )
 }
