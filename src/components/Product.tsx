@@ -19,7 +19,7 @@ export function Product(props: ProductProps){
                <button className = {btnClasses} onClick={() => setDetails(prev => !prev)}>{details ? 'Hide Details' : 'Show Details'}</button>
                {details && <div>
                     <p>{props.product.description}</p>
-                    <p>Rate: <span style={{fontWeight: 'bold'}}>{props.product.rating.rate}</span></p>
+                    <p>Rate: <span style={{fontWeight: 'bold'}}>{props?.product.rating?.rate}</span></p>
                </div>}
           </div>
 
