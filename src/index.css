@@ -14,6 +14,53 @@
      padding: 10px;
      padding-top: 50px;
      margin: 10px;
-     height: 100vh;
+     height: 50vh;
      z-index: 1;
+}
+
+
+
+.background{
+     background-color: #2d3d55;
+     height: 100vh;
+}
+.form__title{
+     font-size: 35px;
+     text-align: center;
+     font-weight: 600;
+     color: #07e7f7cb;
+     margin-bottom: 10px;
+}
+.form{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     row-gap: 10px;
+     padding: 10px;
+     padding-top: 125px;
+     margin: 10px;
+     z-index: 1;
+}
+.form__input{
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #e7e7e7;
+     width: 45vh;
+     border-radius: 5px;
+     margin-bottom: 10px;
+}
+.form__button{
+     width: 100%;
+     padding: 10px 35px;
+     border: 1px solid #11d16e;
+     width: fit-content;
+     border-radius: 5px;
+     margin-bottom: 10px;
+     background-color: #2d3d55;
+     color: #fff;
+}
+.form__button:hover{
+     background-color: #11d16e;
+     color: #fff;
 }
