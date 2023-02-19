@@ -7,11 +7,18 @@ import {useState} from "react";
 export function Registration() {
      const [status, setStatus] = useState('register')
 
+     function clickHandler(venue: string) {
+          setStatus(venue)
+
+     }
+
 
      return (
           <div className="background">
-               <button onClick={() => setStatus('register')} >Register</button>
-               <button onClick={() => setStatus('logIn')} >LogIn</button>
+               <div style={{display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
+                    <button onClick={() => clickHandler('register')} style={{padding: "15px"}}>Register</button>
+                    <button onClick={() => clickHandler('logIn')} >LogIn</button>
+               </div>
 
                {status === 'register' && <RegisterForm></RegisterForm>}
                {status === 'logIn' && <LogInForm></LogInForm>}

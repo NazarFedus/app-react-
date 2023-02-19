@@ -5,7 +5,7 @@ export function RegisterForm() {
 
      function clickHandler(e: React.MouseEvent<HTMLButtonElement>){
           e.preventDefault()
-          alert('You are logged in')
+          alert('You are registered')
      }
      function submitHandler(e: React.FormEvent<HTMLFormElement>){
           e.preventDefault()
