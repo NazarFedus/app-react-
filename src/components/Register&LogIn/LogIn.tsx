@@ -12,7 +12,6 @@ export function LogInForm() {
      }
      return (
           <div>
-
                <form onSubmit={submitHandler} className='form'>
                     <h1 className="form__title">LogIn</h1>
                     <input type="text" placeholder="Email" className="form__input"></input>
