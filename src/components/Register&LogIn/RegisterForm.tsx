@@ -7,8 +7,9 @@ import { errorMonitor } from "events";
 const error = {
      color: 'red',
      fontSize: '15px',
-     margin: '0',
-     padding: '0',
+     margin: '0px',
+     padding: '0px',
+
 }
 
 export function RegisterForm() {
@@ -39,7 +40,7 @@ return (
                     <form className='form'>
                     <h1 className="form__title">Register</h1>
                          <p>
-                              <label htmlFor="name">Name</label><br/>
+                              { touched.name && errors.name && <p style={{color: 'red'}}>{errors.name}*</p>}
                               <input
                                    type="text"
                                    name="name"
@@ -50,10 +51,9 @@ return (
                                    placeholder="Name" >
                               </input>
                          </p>
-                    { touched.name && errors.name && <p style={{color: 'red'}}>{errors.name}</p>}
 
                          <p>
-                              <label htmlFor="email">Email</label><br/>
+                         { touched.email && errors.email && <p style={error}>{errors.email}</p>}
                               <input
                                    type="text"
                                    name="email"
@@ -64,10 +64,9 @@ return (
                                    placeholder="Email" >
                               </input>
                          </p>
-                    { touched.email && errors.email && <p style={error}>{errors.email}</p>}
 
                          <p>
-                              <label htmlFor="password">Password</label><br/>
+                         { touched.password && errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
                               <input
                                    type="password"
                                    name="password"
@@ -78,10 +77,9 @@ return (
                                    placeholder="Password" >
                               </input>
                          </p>
-                    { touched.password && errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
 
                          <p>
-                              <label htmlFor="confirmPassword">Confirm Password</label><br/>
+                         { touched.confirmPassword && errors.confirmPassword && <p style={{color: 'red'}}>{errors.confirmPassword}</p>}
                               <input
                                    type="password"
                                    name="confirmPassword"
@@ -92,7 +90,6 @@ return (
                                    placeholder="Confirm password" >
                               </input>
                          </p>
-                    { touched.confirmPassword && errors.confirmPassword && <p style={{color: 'red'}}>{errors.confirmPassword}</p>}
 
 
                     <button type='submit' disabled={!isValid && !dirty} className='form__button'>Register</button>
