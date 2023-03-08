@@ -9,10 +9,10 @@ const error = {
      fontSize: '15px',
      margin: '0px',
      padding: '0px',
-
 }
 
 export function RegisterForm() {
+     const {submit} = useSubmit();
 
 return (
      <div>
@@ -24,7 +24,7 @@ return (
                     confirmPassword: ''
                }}
                validateOnBlur
-               onSubmit = { values => {console.log(values)}}
+               onSubmit = { values => {submit(values)}}
                validationSchema = {Yup.object().shape({
                name: Yup.string().required('Required'),
                email: Yup.string().email('Invalid email address').required('Required'),
@@ -40,7 +40,7 @@ return (
                     <form className='form' onSubmit={handleSubmit}>
                     <h1 className="form__title">Register</h1>
                          <p>
-                              { touched.name && errors.name && <p style={{color: 'red'}}>{errors.name}*</p>}
+                              { touched.name && errors.name && <p style={error}>{errors.name}*</p>}
                               <input
                                    type="text"
                                    name="name"
@@ -53,7 +53,7 @@ return (
                          </p>
 
                          <p>
-                         { touched.email && errors.email && <p style={error}>{errors.email}</p>}
+                         { touched.email && errors.email && <p style={error}>{errors.email}*</p>}
                               <input
                                    type="text"
                                    name="email"
@@ -66,7 +66,7 @@ return (
                          </p>
 
                          <p>
-                         { touched.password && errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
+                         { touched.password && errors.password && <p style={error}>{errors.password}*</p>}
                               <input
                                    type="password"
                                    name="password"
@@ -79,7 +79,7 @@ return (
                          </p>
 
                          <p>
-                         { touched.confirmPassword && errors.confirmPassword && <p style={{color: 'red'}}>{errors.confirmPassword}</p>}
+                         { touched.confirmPassword && errors.confirmPassword && <p style={error}>{errors.confirmPassword}*</p>}
                               <input
                                    type="password"
                                    name="confirmPassword"
