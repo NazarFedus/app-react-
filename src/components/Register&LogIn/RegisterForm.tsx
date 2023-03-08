@@ -37,7 +37,7 @@ return (
           })}
           >
                {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (
-                    <form className='form'>
+                    <form className='form' onSubmit={handleSubmit}>
                     <h1 className="form__title">Register</h1>
                          <p>
                               { touched.name && errors.name && <p style={{color: 'red'}}>{errors.name}*</p>}
@@ -85,7 +85,7 @@ return (
                                    name="confirmPassword"
                                    onChange={handleChange}
                                    onBlur={handleBlur}
-                                   value={values.password}
+                                   value={values.confirmPassword}
                                    className="form__input"
                                    placeholder="Confirm password" >
                               </input>
