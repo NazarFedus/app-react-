@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from "axios";
 
 interface IData {
      name: string;
@@ -9,9 +10,17 @@ interface IData {
 
 export function useSubmit() {
   const [response, setResponse] = useState(null);
-
      function submit(data: IData){
-          console.log(data)
+          console.log('Sending data on server:', data);
+
+          axios.post('/api/registration', data)
+               .then(response => {
+                    console.log(response.data)
+               })
+               .catch(error => {
+                    console.log(error)
+               })
+
      }
      return {submit, response}
 }
