@@ -24,7 +24,11 @@ return (
                     confirmPassword: ''
                }}
                validateOnBlur
-               onSubmit = { values => {submit(values)}}
+               onSubmit = { values => {submit({
+                    username: values.name,
+                    email: values.email,
+                    password: values.password
+               })}}
                validationSchema = {Yup.object().shape({
                name: Yup.string().required('Required'),
                email: Yup.string().email('Invalid email address').required('Required'),

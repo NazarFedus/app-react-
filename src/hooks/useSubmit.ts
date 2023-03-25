@@ -2,10 +2,9 @@ import React, {useState} from "react";
 import axios from "axios";
 
 interface IData {
-     name: string;
+     username: string;
      email: string;
      password: string;
-     confirmPassword: string;
 }
 
 export function useSubmit() {
@@ -13,14 +12,18 @@ export function useSubmit() {
      function submit(data: IData){
           console.log('Sending data on server:', data);
 
-          axios.post('/api/registration', data)
-               .then(response => {
-                    console.log(response.data)
-               })
-               .catch(error => {
-                    console.log(error)
-               })
+     axios.post('http://localhost:5000/auth/registration', JSON.stringify(data), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
-     }
-     return {submit, response}
+     return {submit}
 }
