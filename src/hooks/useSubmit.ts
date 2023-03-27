@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 
 interface IData {
-     username: string;
+     username?: string;
      email: string;
      password: string;
 }
@@ -25,5 +25,5 @@ export function useSubmit() {
       });
   };
 
-     return {submit}
+     return {submit, response}
 }
