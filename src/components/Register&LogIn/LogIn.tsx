@@ -16,11 +16,6 @@ export function LogInForm() {
      function clickHandler(e: React.MouseEvent<HTMLButtonElement>){
           e.preventDefault()
 
-          // document.querySelectorAll('.form__input').forEach(e => console.log(e.value))
-          console.log('You are logged in')
-     }
-     function submitHandler(e: React.FormEvent<HTMLFormElement>){
-          e.preventDefault()
           const data = {
                email: inputEmail.current.value,
                password: inputPassword.current.value
@@ -28,6 +23,11 @@ export function LogInForm() {
 
           submit(data)
           console.log('submit')
+          console.log('You are logged in')
+     }
+     function submitHandler(e: React.FormEvent<HTMLFormElement>){
+          e.preventDefault()
+
      }
 
      function changeHandler(venue: string): void{
@@ -48,8 +48,8 @@ export function LogInForm() {
           <div>
                <form onSubmit={submitHandler} className='form'>
                     <h1 className="form__title">LogIn</h1>
-                    <input type="text" placeholder="Email" className="form__input" ref={inputEmail} onChange={() => changeHandler('email')}></input>
-                    <input type="text" placeholder="Password" className="form__input" ref={inputPassword} onChange={() => changeHandler('password')}></input>
+                    <input type="email" placeholder="Email" className="form__input" ref={inputEmail} onChange={() => changeHandler('email')}></input>
+                    <input type="password" placeholder="Password" className="form__input" ref={inputPassword} onChange={() => changeHandler('password')}></input>
                     <button onClick={clickHandler} className='form__button' disabled={!isValid}>LogIn</button>
                </form>
           </div>
