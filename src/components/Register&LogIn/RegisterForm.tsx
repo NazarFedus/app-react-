@@ -28,7 +28,7 @@ return (
                     username: values.name,
                     email: values.email,
                     password: values.password
-               })}}
+               }, 'registration')}}
                validationSchema = {Yup.object().shape({
                name: Yup.string().required('Required'),
                email: Yup.string().email('Invalid email address').required('Required'),

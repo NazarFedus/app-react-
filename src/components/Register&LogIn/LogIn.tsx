@@ -21,7 +21,7 @@ export function LogInForm() {
                password: inputPassword.current.value
           }
 
-          submit(data)
+          submit(data, 'login')
           console.log('submit')
           console.log('You are logged in')
      }
