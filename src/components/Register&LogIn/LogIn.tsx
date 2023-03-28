@@ -50,7 +50,7 @@ export function LogInForm() {
                     <h1 className="form__title">LogIn</h1>
                     <input type="email" placeholder="Email" className="form__input" ref={inputEmail} onChange={() => changeHandler('email')}></input>
                     <input type="password" placeholder="Password" className="form__input" ref={inputPassword} onChange={() => changeHandler('password')}></input>
-                    <button onClick={clickHandler} className='form__button' disabled={!isValid}>LogIn</button>
+                    <button onClick={clickHandler} type='submit' className='form__button' disabled={!isValid}>LogIn</button>
                </form>
           </div>
      )
