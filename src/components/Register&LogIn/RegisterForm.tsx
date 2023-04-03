@@ -12,7 +12,8 @@ const error = {
 }
 
 export function RegisterForm() {
-     const {submit} = useSubmit();
+     const {submit, response} = useSubmit();
+     console.log(response)
 
 return (
      <div>

@@ -22,7 +22,10 @@ export function LogInForm() {
           }
 
           submit(data, 'login')
-          console.log('submit')
+          if(response){
+               
+          }
+
           console.log('You are logged in')
      }
      function submitHandler(e: React.FormEvent<HTMLFormElement>){
