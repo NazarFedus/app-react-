@@ -9,10 +9,10 @@ interface IData {
 
 export function useSubmit() {
   const [response, setResponse] = useState(null);
-     function submit(data: IData){
+     function submit(data: IData, request: string){
           console.log('Sending data on server:', data);
 
-     axios.post('http://localhost:5000/auth/registration', JSON.stringify(data), {
+     axios.post(`http://localhost:5000/auth/${request}`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json'
         }
